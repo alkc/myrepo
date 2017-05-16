@@ -2,10 +2,12 @@
 title: "Test Post, Please Ignore"
 author: "alkc"
 date: "5/16/2017"
-output: github_document
+output: html_document
 ---
 
-Let's find out if I can output plotly plots to Github-flavored .md files.
+~~Let's find out if I can output plotly plots to Github-flavored .md files.~~ 
+
+Nope. Let's do HTML instead.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
