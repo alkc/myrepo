@@ -13,11 +13,10 @@ Nope. Let's do HTML instead.
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Let's load maggrittr and plotly with `message` set to `FALSE`, to avoid all the 
-annoying startup messages.
+Let's load maggrittr and ~~plotly~~ **ggplot2** with `message` set to `FALSE`, to avoid all the annoying startup messages.
 
 ```{r, message=FALSE}
-library(plotly)
+library(ggplot2)
 library(magrittr)
 ```
 
@@ -25,12 +24,10 @@ Now, let's have a look at the iris dataset:
 
 ```{r}
 iris %>% 
-    plot_ly(
-        x = ~Sepal.Length, 
-        y = ~ Sepal.Width, 
-        color = ~Species,
-        type = 'scatter',
-        mode = 'markers'
-            )
+    ggplot(aes(
+        x = Sepal.Length, 
+        y = Sepal.Width, 
+        size = Petal.Length*Petal.Width,  # Curious if this will work.
+        color = Species)) + geom_point(alpha = 0.4) + theme_minimal()
 ```
 
